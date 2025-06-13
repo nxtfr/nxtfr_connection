@@ -24,7 +24,7 @@ init([]) ->
     NxtfrConnectionStateM = #{
         id => nxtfr_connection_statem,
         start => {nxtfr_connection_statem, start_link, []},
-        restart => transient},
+        restart => temporary},
 
     ChildSpecs = [NxtfrConnectionStateM],
     {ok, {SupFlags, ChildSpecs}}.
